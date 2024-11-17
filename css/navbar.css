@@ -1,0 +1,148 @@
+
+
+/* ==================================== ====================== ============= =========== ============== ========== */
+
+
+header {
+    .navbar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        z-index: 500;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+
+
+            .logo {
+                padding: 5px ;
+                letter-spacing: 1px;
+                font-weight: 700;
+                color: white;
+                font-size: 20px;
+                line-height: 21px;
+                cursor: pointer;
+            }
+
+            ul {
+                display: flex;
+
+                li a {
+                    font-weight: 700;
+                    font-size: 13px;
+                    line-height: 16px;
+                    color: white;
+                    padding:0 12px;
+                    min-width: 89px;
+                    /* border: 1px solid red; */
+                }
+
+                li:hover a {
+                    text-decoration: underline;
+                    font-size: 15px;
+                }
+            }
+
+            .navbar-menu {
+                display: none;
+                height: 40px;
+                transition: height 1s ease;
+                
+            }
+        }
+
+        .navbar-menu {
+            .knopka {
+                padding: 0;
+                color: white;
+                cursor: pointer;
+                font-size: 40px;
+                line-height: 40px;
+            }
+
+            .navbar576 {
+                padding-top: 10vh;
+                display: block;
+                background: rgba(194, 52, 41, 0.7);
+                backdrop-filter: blur(10px);
+                position: fixed;
+                width: 100%;
+                /* height: 100vh; */
+                top: 0;
+                right: 0;
+                
+            }
+
+            .navbar576 a {
+                color: white ;
+                display: block;
+                text-align: center;
+                padding: 10px;
+            }
+
+
+            .navbar576 a:hover {
+                background-color: rgba(194, 52, 41, 0.5);
+            }
+
+            .navbar_close {
+                position: absolute;
+                top: 20px;
+                right: 10px;
+                background-color: transparent;
+                border-radius: 5px;
+                color: white;
+                border: none;
+                cursor: pointer;
+                font-size: 30px;
+                padding: 5px 20px;
+            }
+
+            #knopka:checked~.navbar576 {
+                display: block;
+            }
+
+            #knopka:not(:checked)~.navbar576 {
+                display: none;
+            }
+        }
+    }
+
+    .navbar.scrolled {
+        background-color: rgba(194, 52, 41, 0.95);
+        transition: 1s ;
+      }
+
+}
+
+
+
+
+
+/* ========================================================== ======================  ======================== ======== */
+
+
+@media screen and (max-width:640px) {
+    header .navbar nav .navbar-menu {
+        display: inline-block;
+        transition: height 1s ease , display 1s ease-out;
+    }
+
+    header .navbar{
+        padding: 0 !important;
+        min-width: 300px;
+    }
+
+    header .navbar nav ul {
+        display: none;
+    }
+
+    header .navbar {
+        padding-top: 20px;
+    }
+}
